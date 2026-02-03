@@ -14,3 +14,9 @@ echo "IP,Date,Method,URL_PROTOCOL,Status" > "$CSV_FILE"
 awk -F' ' '{print $1 "," substr($4,2) " " substr($5,1,5) "," substr($6,2) "," $7 " " substr($8,1,8) "," $9}' "$NGINX_LOG_FILE" >> "$CSV_FILE"
 
 
+if [ -d ".git" ]; then
+    git add "$CSV_FILE"
+    git commit -m "Parsed logs $date"
+else
+    echo "There is no git folder"
+fi
