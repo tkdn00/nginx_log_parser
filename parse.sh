@@ -15,6 +15,7 @@ awk -F' ' '{print $1 "," substr($4,2) " " substr($5,1,5) "," substr($6,2) "," $7
 
 
 if [ -d ".git" ]; then
+    git pull origin main --rebase
     git add "$CSV_FILE"
     git commit -m "Parsed logs: $DATETIME"
     git push -u origin main
