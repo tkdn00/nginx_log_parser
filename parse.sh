@@ -1,5 +1,5 @@
 #!/bin/bash
-DATETIME=$(date)
+DATETIME=$(date +%Y-%m-%d_%H-%M-%S)
 NGINX_LOG_FILE="nginx.log"
 PARSED_FOLDER="parsed_nginx"
 CSV_FILE="$PARSED_FOLDER/nginx_$DATETIME.csv"
