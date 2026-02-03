@@ -1,8 +1,8 @@
 #!/bin/bash
+DATETIME=$(date)
 NGINX_LOG_FILE="nginx.log"
 PARSED_FOLDER="parsed_nginx"
-CSV_FILE="$PARSED_FOLDER/nginx.csv"
-DATETIME=$(date)
+CSV_FILE="$PARSED_FOLDER/nginx_$DATETIME.csv"
 mkdir -p "$PARSED_FOLDER"
 
 if [[ ! -f "$NGINX_LOG_FILE" ]]; then
